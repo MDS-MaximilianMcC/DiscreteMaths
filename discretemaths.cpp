@@ -40,3 +40,16 @@ float Ceiling(const float number)
 	if (number > 0 && number != integer) return integer + 1;
 	return integer;
 }
+
+unsigned long long Factorial(const unsigned int number)
+{
+	if (number == 0) return 1;
+
+	long long product = number;
+	for (int i = number - 1; i > 0; i--)
+	{
+		product *= i;
+	}
+
+	return product;
+}

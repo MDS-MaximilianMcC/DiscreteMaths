@@ -48,6 +48,13 @@ int main()
 	testsPassed += test(Ceiling(0.1f), 1, totalTests);
 	testsPassed += test(Ceiling(-0.1f), 0, totalTests);
 	testsPassed += test(Ceiling(-5.356f), -5, totalTests);
+
+	// 20
+	testsPassed += test(Factorial(0), 1, totalTests);
+	testsPassed += test(Factorial(1), 1, totalTests);
+	testsPassed += test(Factorial(2), 2, totalTests);
+	testsPassed += test(Factorial(5), 120, totalTests);
+	testsPassed += test(Factorial(10), 3628800, totalTests);
 	
 	std::cout << "\nPassed " << testsPassed << "/" << totalTests << " tests!" << std::endl;
 
