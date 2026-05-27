@@ -23,12 +23,33 @@ int main()
 	int testsPassed = 0;
 
 	// TODO: Make proper testing class
+	// 1
 	testsPassed += test(Magnitude(-5), 5, totalTests);
 	testsPassed += test(Magnitude(-0), 0, totalTests);
 	testsPassed += test(Magnitude(0), 0, totalTests);
-	testsPassed += test(Magnitude(5), 5, totalTests);
+	testsPassed += test(Magnitude(5.2f), 5.2f, totalTests);
 
-	std::cout << "Passed " << testsPassed << "/" << totalTests << " tests!" << std::endl;
+	// 5
+	testsPassed += test(Signum(5), 1, totalTests);
+	testsPassed += test(Signum(0), 1, totalTests);
+	testsPassed += test(Signum(-0), 1, totalTests);
+	testsPassed += test(Signum(-5), -1, totalTests);
+
+	// 9
+	testsPassed += test(Floor(5.356f), 5, totalTests);
+	testsPassed += test(Floor(5.999f), 5, totalTests);
+	testsPassed += test(Floor(0.9f), 0, totalTests);
+	testsPassed += test(Floor(-0.1f), -1, totalTests);
+	testsPassed += test(Floor(-5.356f), -6, totalTests);
+
+	// 14
+	testsPassed += test(Ceiling(5.356f), 6, totalTests);
+	testsPassed += test(Ceiling(5.001f), 6, totalTests);
+	testsPassed += test(Ceiling(0.1f), 1, totalTests);
+	testsPassed += test(Ceiling(-0.1f), 0, totalTests);
+	testsPassed += test(Ceiling(-5.356f), -5, totalTests);
+	
+	std::cout << "\nPassed " << testsPassed << "/" << totalTests << " tests!" << std::endl;
 
 	// Stop the program from closing
 	std::cin.get();
